@@ -12,28 +12,24 @@ public class CalculosFisicos {
       return var0 / var2;
    }
 
-   public static double calcularAreaTriangulo(double base, double altura) {
-      return base * altura / 2.0;
-   }
-
    public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
       System.out.println("\nEscolha uma opção:");
-      System.out.println("1 - Calcular velocidade média");
-      System.out.println("2 - Calcular aceleração média");
-      System.out.println("3 - Calcular força resultante");
-      System.out.println("4 - Calcular tensão (Lei de Ohm)");
-      System.out.println("5 - Calcular potência elétrica");
-      System.out.println("6 - Calcular energia elétrica");
-      System.out.println("7 - Calcular energia cinética");
-      System.out.println("8 - Calcular energia potencial gravitacional");
-      System.out.println("9 - Calcular trabalho de uma força");
-      System.out.println("10 - Calcular calor sensível");
-      System.out.println("11 - Calcular velocidade de uma onda");
-      System.out.println("12 - Calcular área do triângulo");
-      System.out.println("13 - Calcular pressão");
-      System.out.println("14 - Calcular densidade");
-      System.out.println("15 - Calcular impulso");
+      System.out.println("1 - Calcular velocidade média (espaço / tempo)");
+      System.out.println("2 - Calcular aceleração média (velocidade / tempo)");
+      System.out.println("3 - Calcular força resultante (massa * aceleração)");
+      System.out.println("4 - Calcular tensão (Lei de Ohm) (resistencia * corrente)");
+      System.out.println("5 - Calcular potência elétrica (tensão * corrente)");
+      System.out.println("6 - Calcular energia elétrica (potencia * tempo)");
+      System.out.println("7 - Calcular energia cinética (massa * velocidade²)");
+      System.out.println("8 - Calcular energia potencial gravitacional (massa * gravidade * referencia)");
+      System.out.println("9 - Calcular trabalho de uma força (força * deslocamento * cos(angulo))");
+      System.out.println("10 - Calcular calor sensível (massa * calor especifico * tempo");
+      System.out.println("11 - Calcular calor específico (calor / (massa * tempo))");
+      System.out.println("12 - Calcular velocidade de uma onda (comprimento / frequencia)");
+      System.out.println("13 - Calcular pressão (força / área ");
+      System.out.println("14 - Calcular densidade (massa/volume)");
+      System.out.println("15 - Calcular impulso (Força/tempo)");
       System.out.print("Opção: ");
       
       String opcao = scanner.nextLine();
@@ -146,7 +142,19 @@ public class CalculosFisicos {
             System.out.printf("O calor sensível é: %.2f J\n", total);
             break;
 
-         case "11": // Velocidade de uma onda
+         case "11": // Calor específico
+            System.out.print("Digite o calor sensível (J): ");
+            valor1 = Double.parseDouble(scanner.nextLine());
+            System.out.print("Digite a massa (kg): ");
+            valor2 = Double.parseDouble(scanner.nextLine());
+            System.out.print("Digite a variação de temperatura (K): ");
+            valor3 = Double.parseDouble(scanner.nextLine());
+
+            total = dividir(valor1, multiplicar(valor2, valor3));
+            System.out.printf("O calor específico é: %.2f J/kg·K\n", total);
+            break;
+
+         case "12": // Velocidade de uma onda
             System.out.print("Digite o comprimento de onda (m): ");
             valor1 = Double.parseDouble(scanner.nextLine());
             System.out.print("Digite a frequência (Hz): ");
@@ -154,16 +162,6 @@ public class CalculosFisicos {
 
             total = multiplicar(valor1, valor2);
             System.out.printf("A velocidade da onda é: %.2f m/s\n", total);
-            break;
-
-         case "12": // Área do triângulo
-            System.out.print("Digite a base do triângulo (cm): ");
-            valor1 = Double.parseDouble(scanner.nextLine());
-            System.out.print("Digite a altura do triângulo (cm): ");
-            valor2 = Double.parseDouble(scanner.nextLine());
-
-            total = calcularAreaTriangulo(valor1, valor2);
-            System.out.printf("A área do triângulo é: %.2f cm²\n", total);
             break;
 
          case "13": // Pressão
