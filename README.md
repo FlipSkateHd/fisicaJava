@@ -1,1 +1,1 @@
-<img src="Caso de uso\.png">
+<img src="\Caso de uso.png">
